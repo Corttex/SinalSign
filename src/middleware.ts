@@ -54,7 +54,7 @@ export function middleware(request: NextRequest) {
   const isDev = process.env.NODE_ENV === "development";
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' ${isDev ? "'unsafe-eval'" : ""} https://www.googletagmanager.com https://connect.facebook.net;
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net;
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     img-src 'self' blob: data: https://www.facebook.com https://www.google-analytics.com https://*.google.com;
     font-src 'self' https://fonts.gstatic.com;
