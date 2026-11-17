@@ -1,0 +1,46 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sinalsign_web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-https://sinalsign.com.br}
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-sinalsign}:${POSTGRES_PASSWORD:-sinalsign_secure_pass}@db:5432/${POSTGRES_DB:-sinalsign_db}?schema=public
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - sinalsign_network
+
+  db:
+    image: postgres:16-alpine
+    container_name: sinalsign_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-sinalsign}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-sinalsign_secure_pass}
+      POSTGRES_DB: ${POSTGRES_DB:-sinalsign_db}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-sinalsign} -d ${POSTGRES_DB:-sinalsign_db}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - sinalsign_network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  sinalsign_network:
+    driver: bridge

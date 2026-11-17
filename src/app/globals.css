@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ss-royal-blue: #303590;
+  --color-ss-deep-blue: #1c205c;
+  --color-ss-cyan: #85bcd7;
+  --color-ss-magenta: #e06196;
+  --color-ss-yellow: #f7e540;
+  --color-ss-black: #231f20;
+  --color-gold: #d4af37;
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-mono: var(--font-mono);
+}
+
+@layer base {
+  :root {
+    /* Base Obsidian Profundo */
+    --bg-base: #06070a;
+    --foreground: #f4f4f6;
+
+    /* Identidade Oficial Sinal Sign (Extraída dos Vetores Oficiais) */
+    --ss-royal-blue: #303590;    /* Azul Principal Oficial */
+    --ss-deep-blue: #1c205c;     /* Azul Profundo para Gradientes */
+    --ss-cyan: #85bcd7;          /* Ciano CMYK Oficial */
+    --ss-magenta: #e06196;       /* Magenta CMYK Oficial */
+    --ss-yellow: #f7e540;        /* Amarelo CMYK Oficial */
+    --ss-black: #231f20;         /* Preto Técnico CMYK Oficial */
+
+    /* Acentos Metálicos & Engenharia */
+    --gold: #d4af37;
+    --gold-glow: rgba(212, 175, 55, 0.4);
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--foreground);
+    overflow-x: hidden;
+    selection-background-color: rgba(48, 53, 144, 0.4);
+    selection-color: #ffffff;
+  }
+}
+
+.font-heading {
+  font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+}
+
+/* Efeito Liquid Glass Refraction com Aberração Cromática da Marca */
+.liquid-glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(48, 53, 144, 0.05) 40%,
+    rgba(133, 188, 215, 0.03) 70%,
+    rgba(224, 97, 150, 0.03) 100%
+  );
+  backdrop-filter: blur(28px) saturate(160%) contrast(105%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%) contrast(105%);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 24px 60px -15px rgba(0, 0, 0, 0.75),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 2px 0 rgba(133, 188, 215, 0.12),
+    inset 1px 0 2px 0 rgba(224, 97, 150, 0.1);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass:hover {
+  border-color: rgba(133, 188, 215, 0.4);
+  box-shadow:
+    0 30px 70px -10px rgba(0, 0, 0, 0.85),
+    0 0 35px -5px rgba(48, 53, 144, 0.3),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 3px 0 rgba(133, 188, 215, 0.25),
+    inset 1px 0 3px 0 rgba(247, 229, 64, 0.2);
+}
+
+.liquid-pill {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.liquid-pill:hover {
+  background: rgba(48, 53, 144, 0.2);
+  border-color: rgba(133, 188, 215, 0.6);
+  box-shadow: 0 0 20px rgba(48, 53, 144, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Analog Film Grain Overlay */
+.film-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+/* Background Fluid Mesh com as Cores Oficiais Sinal Sign */
+.ambient-mesh {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background: #06070a;
+}
+
+.ambient-blob {
+  position: absolute;
+  filter: blur(130px);
+  border-radius: 50%;
+  animation: blobFloat 24s infinite alternate ease-in-out;
+}
+
+@keyframes blobFloat {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(70px, -50px) scale(1.12);
+  }
+  100% {
+    transform: translate(-40px, 60px) scale(0.92);
+  }
+}
+
+/* Selo rotativo da Hero */
+.rotate-badge {
+  animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animação Contínua para o Carrossel Infinito de Logos */
+@keyframes carouselInfinite {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel-infinite {
+  animation: carouselInfinite 32s linear infinite;
+}
+
+.animate-carousel-infinite:hover {
+  animation-play-state: paused;
+}
+
+/* Animação Contínua e Lenta para o Carrossel do Google Reviews */
+@keyframes reviewsSlowInfinite {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-reviews-slow {
+  animation: reviewsSlowInfinite 55s linear infinite;
+}
+
+.animate-reviews-slow:hover {
+  animation-play-state: paused;
+}

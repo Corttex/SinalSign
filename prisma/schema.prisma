@@ -1,0 +1,139 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  ADMIN
+  OPERATOR
+  SELLER
+}
+
+enum PersonType {
+  PF
+  PJ
+}
+
+enum LeadSource {
+  SITE_SIMULATOR
+  SITE_FORM
+  SCRAPER_GOOGLE_MAPS
+  SCRAPER_CNPJ
+  SCRAPER_INSTAGRAM
+  WHATSAPP_DIRECT
+  GOOGLE_ADS
+  META_ADS
+  MANUAL
+}
+
+enum FunnelStage {
+  CAPTURED_LEAD      // Extraído pelo Scraper ou entrou pelo site / Ads
+  WHATSAPP_CONTACTED // 1ª Abordagem enviada no WhatsApp
+  QUOTING            // Em levantamento de medidas / orçamento
+  PROPOSAL_SENT      // Link /p/[token] gerado e enviado
+  PROPOSAL_VIEWED    // Cliente abriu o link da proposta
+  APPROVED_PRODUCTION// Orçamento aprovado -> Em fabricação
+  INSTALLED_FINISHED // Entregue / Instalado
+  LOST               // Perdido / Sem retorno
+}
+
+enum PricingUnit {
+  SQUARE_METER // Cálculo por m² (Largura x Altura)
+  LINEAR_METER // Cálculo por metro linear (ex: dobra, fita LED, estrutura)
+  UNIT         // Cálculo por unidade/peça (ex: letra caixa avulsa, prolongador)
+}
+
+enum ProposalStatus {
+  DRAFT
+  SENT
+  VIEWED
+  APPROVED
+  REJECTED
+  EXPIRED
+}
+
+model User {
+  id           String    @id @default(cuid())
+  name         String
+  email        String    @unique
+  passwordHash String
+  role         Role      @default(OPERATOR)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Client {
+  id              String      @id @default(cuid())
+  type            PersonType  @default(PJ)
+  name            String      // Razão Social ou Nome Completo
+  tradeName       String?     // Nome Fantasia (ex: "Send Beauty")
+  document        String?     @unique // CPF ou CNPJ higienizado
+  whatsapp        String      @unique // Formato E.164: 5561984853485
+  whatsappValid   Boolean     @default(true)
+  phoneSecondary  String?
+  email           String?
+  instagram       String?
+  website         String?
+  niche           String?     // Ex: "Advocacia", "Clínica", "Condomínio"
+  cityRegion      String?     // Ex: "Águas Claras - DF", "Asa Sul - DF"
+  address         String?
+  googleRating    Float?
+  googleReviews   Int?
+  source          LeadSource  @default(MANUAL)
+  stage           FunnelStage @default(CAPTURED_LEAD)
+  notes           String?     @db.Text
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  proposals       CommercialProposal[]
+}
+
+model MaterialItem {
+  id          String      @id @default(cuid())
+  category    String      // "FACHADA_ACM", "LETRA_CAIXA", "IMPRESSAO_UV", "ADESIVACAO"
+  name        String      // Ex: "ACM 3mm Núcleo Mineral PVDF", "Letra Caixa Inox Polido"
+  description String?     @db.Text
+  unit        PricingUnit @default(SQUARE_METER)
+  costPrice   Decimal     @db.Decimal(10, 2)
+  salePrice   Decimal     @db.Decimal(10, 2)
+  active      Boolean     @default(true)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model CommercialProposal {
+  id             String         @id @default(cuid())
+  clientId       String
+  client         Client         @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  publicToken    String         @unique // Token criptográfico opaco para URL pública (/p/[token])
+  title          String         // Ex: "Fachada em ACM Send Beauty + Letras Douradas 3D"
+  status         ProposalStatus @default(DRAFT)
+  itemsJson      Json           // Itens calculados com medidas, material e acabamento
+  subtotalAmount Decimal        @db.Decimal(10, 2)
+  discountAmount Decimal        @default(0) @db.Decimal(10, 2)
+  totalAmount    Decimal        @db.Decimal(10, 2)
+  conditions     String?        @db.Text
+  viewCount      Int            @default(0)
+  lastViewedAt   DateTime?
+  approvedAt     DateTime?
+  expiresAt      DateTime?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+}
+
+model ScraperCampaign {
+  id           String    @id @default(cuid())
+  title        String    // Ex: "Clínicas Odontológicas - Águas Claras"
+  niche        String
+  region       String
+  totalFound   Int       @default(0)
+  totalValid   Int       @default(0)
+  status       String    @default("IDLE") // "RUNNING", "COMPLETED", "FAILED"
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
