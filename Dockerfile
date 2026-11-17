@@ -1,27 +1,28 @@
-# Dockerfile para Sinal Sign (Next.js 16 + Prisma)
+# Dockerfile Otimizado para Coolify / VPS
 FROM node:20-alpine AS builder
 
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# Desabilita telemetria no build
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 ENV DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy"
 
-# Copia todo o projeto para o build
+# Copia explicitamente os arquivos de manifesto para garantir integridade
+COPY package.json package-lock.json ./
+COPY prisma ./prisma/
+
+# Instala as dependências travadas pelo lockfile
+RUN npm ci || npm install
+
+# Copia todo o código fonte
 COPY . .
 
-# Instala dependências
-RUN npm install
-
-# Gera o cliente do Prisma
+# Gera o client do Prisma e compila o Next.js
 RUN npx prisma generate
-
-# Executa o build de produção do Next.js
 RUN npm run build
 
-# Estágio de Execução (Runner)
+# Imagem de execução final
 FROM node:20-alpine AS runner
 WORKDIR /app
 
