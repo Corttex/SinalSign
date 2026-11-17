@@ -1,34 +1,27 @@
-# Dockerfile Multi-Stage Otimizado para Next.js 16 + Prisma
+# Dockerfile para Sinal Sign (Next.js 16 + Prisma)
+FROM node:20-alpine AS builder
 
-# Estágio 1: Instalação de Dependências
-FROM node:20-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# Copia arquivos de pacotes e schema do prisma
-COPY package.json package-lock.json* ./
-COPY prisma ./prisma/
-
-RUN npm install
-
-# Estágio 2: Build da Aplicação
-FROM node:20-alpine AS builder
-WORKDIR /app
-
-COPY --from=deps /app/node_modules ./node_modules
-COPY . .
-
+# Desabilita telemetria no build
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
-
-# Gera o Prisma Client com dummy URL para validação estática de schema se necessário
 ENV DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy"
+
+# Copia todo o projeto para o build
+COPY . .
+
+# Instala dependências
+RUN npm install
+
+# Gera o cliente do Prisma
 RUN npx prisma generate
 
-# Compila o Next.js
+# Executa o build de produção do Next.js
 RUN npm run build
 
-# Estágio 3: Imagem Final de Execução (Leve e Segura)
+# Estágio de Execução (Runner)
 FROM node:20-alpine AS runner
 WORKDIR /app
 
@@ -41,9 +34,7 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/public ./public
-
-RUN mkdir .next
-RUN chown nextjs:nodejs .next
+RUN mkdir .next && chown nextjs:nodejs .next
 
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
