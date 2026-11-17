@@ -90,6 +90,11 @@ export function ComprehensiveFooter() {
           </h4>
           <ul className="space-y-2 text-xs font-sans">
             <li>
+              <Link href="/sinalizacao-em-brasilia" className="text-neutral-300 hover:text-[#85BCD7] transition-colors flex items-center gap-1.5 font-semibold text-white">
+                • Sinalização em Brasília (Fábrica)
+              </Link>
+            </li>
+            <li>
               <Link href="/comunicacao-visual-brasilia" className="text-neutral-300 hover:text-[#85BCD7] transition-colors flex items-center gap-1.5 font-medium">
                 • Comunicação Visual em Brasília
               </Link>

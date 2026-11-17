@@ -19,7 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
 
-    // 2. Os 7 Pilares Verticais Fundamentais
+    // 2. Os 7 Pilares Verticais Fundamentais + Pilar Mestre de Sinalização
+    {
+      url: `${baseUrl}/sinalizacao-em-brasilia`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.98,
+    },
     {
       url: `${baseUrl}/comunicacao-visual-brasilia`,
       lastModified: now,

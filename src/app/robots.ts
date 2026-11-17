@@ -26,6 +26,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
         allow: [
           "/",
+          "/sinalizacao-em-brasilia",
           "/comunicacao-visual-em-brasilia",
           "/comunicacao-visual-brasilia",
           "/fachadas-em-acm-brasilia",
