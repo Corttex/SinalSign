@@ -162,11 +162,30 @@
   }
 }
 
+@keyframes carouselInfiniteReverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .animate-carousel-infinite {
-  animation: carouselInfinite 32s linear infinite;
+  animation: carouselInfinite 44s linear infinite;
+  will-change: transform;
 }
 
 .animate-carousel-infinite:hover {
+  animation-play-state: paused;
+}
+
+.animate-carousel-infinite-reverse {
+  animation: carouselInfiniteReverse 48s linear infinite;
+  will-change: transform;
+}
+
+.animate-carousel-infinite-reverse:hover {
   animation-play-state: paused;
 }
 
