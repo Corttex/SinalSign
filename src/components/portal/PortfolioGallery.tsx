@@ -24,27 +24,27 @@ export function PortfolioGallery() {
   });
 
   return (
-    <section id="portfolio" className="space-y-8">
+    <section id="portfolio" className="space-y-6 sm:space-y-8">
       {/* Cabeçalho da Seção */}
-      <div className="space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full liquid-pill text-xs text-[#85BCD7] font-heading font-semibold border border-[#85BCD7]/30">
-          <Sparkles className="w-3.5 h-3.5 text-[#F7E540]" />
-          GALERIA EXECUTIVA DE CLIENTES
+      <div className="space-y-3 sm:space-y-4">
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full liquid-pill text-[11px] sm:text-xs text-[#85BCD7] font-heading font-semibold border border-[#85BCD7]/30">
+          <Sparkles className="w-3.5 h-3.5 text-[#F7E540] shrink-0" />
+          <span>GALERIA EXECUTIVA DE CLIENTES</span>
         </div>
-        <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase font-heading">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tight uppercase font-heading">
           Obras Reais Instaladas em Brasília &amp; Entorno
         </h2>
-        <p className="text-sm text-neutral-300 font-sans max-w-3xl font-normal leading-relaxed">
+        <p className="text-xs sm:text-sm text-neutral-300 font-sans max-w-3xl font-normal leading-relaxed">
           Projetos reais de empresas, condomínios nobres, clínicas e escritórios que confiam na engenharia e fabricação própria da Sinal Sign.
         </p>
 
         {/* Filtros em Abas de Vidro posicionados ABAIXO do texto */}
-        <div className="pt-2 flex flex-wrap items-center gap-2.5">
+        <div className="pt-2 flex flex-wrap items-center gap-2 sm:gap-2.5">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-mono transition-all cursor-pointer ${
+              className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-mono transition-all cursor-pointer ${
                 selectedCategory === cat.id
                   ? "bg-[#303590] text-white font-semibold shadow-md shadow-[#303590]/50 border border-[#85BCD7]/40"
                   : "liquid-pill text-neutral-300 hover:text-white"
@@ -57,7 +57,7 @@ export function PortfolioGallery() {
       </div>
 
       {/* Grid de Blocos das Obras com o Mesmo Padrão Visual e Tipográfico das Categorias de Serviços */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {filteredCases.map((caseItem) => {
           const waUrl = `https://wa.me/5561984853485?text=${encodeURIComponent(
             `Olá Sinal Sign! Gostei da obra da ${caseItem.clientName} (${caseItem.projectType}) e gostaria de um orçamento similar para minha empresa.`
@@ -66,7 +66,7 @@ export function PortfolioGallery() {
           return (
             <div
               key={caseItem.id}
-              className="group relative min-h-[380px] rounded-3xl overflow-hidden border border-white/10 bg-[#06070A] flex flex-col justify-between p-7 transition-all duration-500 hover:border-[#85BCD7]/70 shadow-xl shadow-black/70"
+              className="group relative min-h-[310px] sm:min-h-[380px] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 bg-[#06070A] flex flex-col justify-between p-5 sm:p-7 transition-all duration-500 hover:border-[#85BCD7]/70 shadow-xl shadow-black/70"
             >
               {/* Imagem Fotográfica Real de Fundo com Alta Nitidez e Zoom Suave */}
               {/* eslint-disable-next-line @next/next/no-img-element */}

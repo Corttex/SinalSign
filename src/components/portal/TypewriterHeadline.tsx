@@ -48,12 +48,12 @@ export function TypewriterHeadline() {
   return (
     <div className="w-full flex flex-col gap-0.5 sm:gap-1.5">
       {/* LINHA 1: Especialistas em */}
-      <div className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.6rem] font-black tracking-tight text-white/90 uppercase font-heading leading-tight whitespace-nowrap">
+      <div className="text-[1.35rem] xs:text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.6rem] font-black tracking-tight text-white/90 uppercase font-heading leading-tight whitespace-nowrap">
         Especialistas em
       </div>
 
       {/* LINHA 2: Texto sendo escrito com altura reservada para nunca empurrar a Linha 3 */}
-      <div className="min-h-[1.25em] text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.6rem] font-black tracking-tight uppercase font-heading leading-tight flex items-center whitespace-nowrap">
+      <div className="min-h-[1.25em] text-[1.35rem] xs:text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.6rem] font-black tracking-tight uppercase font-heading leading-tight flex items-center whitespace-nowrap">
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#85BCD7] via-[#E06196] to-[#F7E540] drop-shadow-[0_0_35px_rgba(48,53,144,0.65)]">
           {currentText}
         </span>
@@ -61,7 +61,7 @@ export function TypewriterHeadline() {
       </div>
 
       {/* LINHA 3: em Brasília. fixo com total estabilidade */}
-      <div className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.6rem] font-black tracking-tight text-white uppercase font-heading leading-tight opacity-95 whitespace-nowrap">
+      <div className="text-[1.35rem] xs:text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.6rem] font-black tracking-tight text-white uppercase font-heading leading-tight opacity-95 whitespace-nowrap">
         em Brasília.
       </div>
     </div>

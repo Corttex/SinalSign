@@ -134,18 +134,18 @@ export function GoogleReviewsCarousel() {
   const infiniteReviews = [...GOOGLE_REVIEWS_TOP10, ...GOOGLE_REVIEWS_TOP10];
 
   return (
-    <section id="avaliacoes" className="space-y-8 py-4">
+    <section id="avaliacoes" className="space-y-6 sm:space-y-8 py-3 sm:py-4">
       {/* Cabeçalho de Autoridade e Prova Social Google */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-white/10">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 pb-3 sm:pb-4 border-b border-white/10">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full liquid-pill text-xs text-[#85BCD7] font-heading font-semibold mb-2 border border-[#85BCD7]/30">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-            REPUTAÇÃO VERIFICADA NO GOOGLE • NOTA 4.9 DE SATISFAÇÃO
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full liquid-pill text-[11px] sm:text-xs text-[#85BCD7] font-heading font-semibold mb-2 border border-[#85BCD7]/30">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+            <span>REPUTAÇÃO VERIFICADA NO GOOGLE • NOTA 4.9 DE SATISFAÇÃO</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase font-heading">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tight uppercase font-heading">
             O Que Nossos Clientes Dizem no Google
           </h2>
-          <p className="text-sm text-neutral-300 font-sans mt-2 max-w-2xl font-normal">
+          <p className="text-xs sm:text-sm text-neutral-300 font-sans mt-2 max-w-2xl font-normal leading-relaxed">
             Confiança construída com precisão técnica, acabamento industrial e cumprimento rigoroso de prazos em obras por todo o Distrito Federal.
           </p>
         </div>
@@ -155,11 +155,11 @@ export function GoogleReviewsCarousel() {
           href={googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="liquid-glass px-6 py-4 flex items-center gap-4 border border-white/15 hover:border-[#85BCD7]/60 transition-all group shrink-0 shadow-xl shadow-black/40"
+          className="liquid-glass px-4 py-3 sm:px-6 sm:py-4 flex items-center gap-3 sm:gap-4 border border-white/15 hover:border-[#85BCD7]/60 transition-all group shrink-0 shadow-xl shadow-black/40 rounded-xl sm:rounded-2xl w-fit"
         >
           {/* Logo Oficial Colorida do Google */}
-          <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center p-2 shadow-md shrink-0">
-            <svg viewBox="0 0 24 24" className="w-7 h-7">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white flex items-center justify-center p-2 shadow-md shrink-0">
+            <svg viewBox="0 0 24 24" className="w-6 h-6 sm:w-7 sm:h-7">
               <path
                 fill="#4285F4"
                 d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -180,28 +180,28 @@ export function GoogleReviewsCarousel() {
           </div>
 
           <div className="flex flex-col">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl font-black text-white font-heading">4.9</span>
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="text-xl sm:text-2xl font-black text-white font-heading">4.9</span>
               <div className="flex items-center text-[#F7E540]">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#F7E540]" />
+                  <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-[#F7E540]" />
                 ))}
               </div>
             </div>
-            <span className="text-xs text-neutral-300 font-sans flex items-center gap-1 group-hover:text-[#85BCD7] transition-colors">
-              Ver avaliações no Google <ExternalLink className="w-3.5 h-3.5" />
+            <span className="text-[11px] sm:text-xs text-neutral-300 font-sans flex items-center gap-1 group-hover:text-[#85BCD7] transition-colors">
+              Ver avaliações no Google <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             </span>
           </div>
         </a>
       </div>
 
       {/* Carrossel Infinito e Lento das 10 Últimas Avaliações */}
-      <div className="relative w-full overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        <div className="flex items-stretch gap-6 w-max animate-reviews-slow">
+      <div className="relative w-full overflow-hidden py-2 sm:py-4 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+        <div className="flex items-stretch gap-3.5 sm:gap-6 w-max animate-reviews-slow">
           {infiniteReviews.map((rev, index) => (
             <div
               key={`${rev.id}-${index}`}
-              className="flex flex-col justify-between w-[320px] sm:w-[380px] p-6 rounded-3xl liquid-glass border border-white/10 hover:border-[#85BCD7]/50 transition-all shrink-0 group shadow-xl shadow-black/50"
+              className="flex flex-col justify-between w-[275px] xs:w-[300px] sm:w-[380px] p-4 sm:p-6 rounded-2xl sm:rounded-3xl liquid-glass border border-white/10 hover:border-[#85BCD7]/50 transition-all shrink-0 group shadow-xl shadow-black/50"
             >
               {/* Topo do Card: Estrelas + Badge de Serviço */}
               <div className="space-y-3">

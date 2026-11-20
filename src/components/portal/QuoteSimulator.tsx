@@ -172,8 +172,8 @@ Gostaria de falar com o atendimento técnico para orçamento e detalhes!`;
   )}`;
 
   return (
-    <section id="simulador" className="w-full max-w-5xl mx-auto my-12 relative z-20">
-      <div className="liquid-glass p-6 sm:p-10 border border-white/15 relative overflow-hidden">
+    <section id="simulador" className="w-full max-w-5xl mx-auto my-8 sm:my-12 relative z-20">
+      <div className="liquid-glass p-4 sm:p-6 md:p-10 border border-white/15 relative overflow-hidden rounded-2xl sm:rounded-3xl">
         {/* Topo do Simulador Inteligente */}
         <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-white/10 gap-4">
           <div>

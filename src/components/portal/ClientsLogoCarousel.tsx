@@ -24,7 +24,7 @@ const ROW_ONE_LOGOS: ClientLogo[] = [
     alt: "Logo Paulo Octávio — cliente corporativo de comunicação visual e sinalização da Sinal Sign em Brasília DF",
     width: 860,
     height: 265,
-    logoClass: "max-h-[48px] max-w-[168px]",
+    logoClass: "max-h-[30px] sm:max-h-[48px] max-w-[105px] sm:max-w-[168px]",
     restingOpacity: "opacity-[0.86]",
   },
   {
@@ -36,7 +36,7 @@ const ROW_ONE_LOGOS: ClientLogo[] = [
     alt: "Logo Carlton Tower — cliente de sinalização corporativa e fachadas da Sinal Sign em Brasília DF",
     width: 586,
     height: 177,
-    logoClass: "max-h-[54px] max-w-[182px]",
+    logoClass: "max-h-[34px] sm:max-h-[54px] max-w-[115px] sm:max-w-[182px]",
   },
   {
     id: "liquigas",
@@ -47,7 +47,7 @@ const ROW_ONE_LOGOS: ClientLogo[] = [
     alt: "Logo Liquigás — cliente de comunicação visual, placas e adesivação da Sinal Sign em Brasília DF",
     width: 788,
     height: 227,
-    logoClass: "max-h-[52px] max-w-[182px]",
+    logoClass: "max-h-[32px] sm:max-h-[52px] max-w-[115px] sm:max-w-[182px]",
   },
   {
     id: "kallyne-alcantara-advocacia",
@@ -58,7 +58,7 @@ const ROW_ONE_LOGOS: ClientLogo[] = [
     alt: "Logo Kallyne Alcântara Advocacia — cliente de letreiro em acrílico e sinalização jurídica da Sinal Sign em Brasília DF",
     width: 523,
     height: 277,
-    logoClass: "max-h-[68px] max-w-[176px]",
+    logoClass: "max-h-[40px] sm:max-h-[68px] max-w-[110px] sm:max-w-[176px]",
   },
   {
     id: "velocity",
@@ -69,7 +69,7 @@ const ROW_ONE_LOGOS: ClientLogo[] = [
     alt: "Logo Velocity — cliente de comunicação visual e letreiros da Sinal Sign em Brasília DF",
     width: 791,
     height: 150,
-    logoClass: "max-h-[38px] max-w-[188px]",
+    logoClass: "max-h-[24px] sm:max-h-[38px] max-w-[115px] sm:max-w-[188px]",
   },
   {
     id: "soror-laboratorio-veterinario",
@@ -80,7 +80,7 @@ const ROW_ONE_LOGOS: ClientLogo[] = [
     alt: "Logo Soror Laboratório Veterinário — cliente de fachada e placas em acrílico da Sinal Sign em Brasília DF",
     width: 475,
     height: 187,
-    logoClass: "max-h-[58px] max-w-[176px]",
+    logoClass: "max-h-[36px] sm:max-h-[58px] max-w-[110px] sm:max-w-[176px]",
   },
   {
     id: "spa-das-sobrancelhas",
@@ -91,7 +91,7 @@ const ROW_ONE_LOGOS: ClientLogo[] = [
     alt: "Logo Spa das Sobrancelhas — cliente de fachada em ACM, adesivos e acrílico da Sinal Sign em Brasília DF",
     width: 432,
     height: 468,
-    logoClass: "max-h-[70px] max-w-[130px]",
+    logoClass: "max-h-[44px] sm:max-h-[70px] max-w-[85px] sm:max-w-[130px]",
   },
   {
     id: "cartorio-colorado",
@@ -102,7 +102,7 @@ const ROW_ONE_LOGOS: ClientLogo[] = [
     alt: "Logo Cartório Colorado — cliente de sinalização interna e fachadas da Sinal Sign em Brasília DF",
     width: 599,
     height: 158,
-    logoClass: "max-h-[50px] max-w-[184px]",
+    logoClass: "max-h-[32px] sm:max-h-[50px] max-w-[115px] sm:max-w-[184px]",
   },
   {
     id: "terra-e-brasa",
@@ -113,7 +113,7 @@ const ROW_ONE_LOGOS: ClientLogo[] = [
     alt: "Logo Terra & Brasa — cliente de letreiro caixa e comunicação visual gastronômica da Sinal Sign em Brasília DF",
     width: 620,
     height: 214,
-    logoClass: "max-h-[58px] max-w-[182px]",
+    logoClass: "max-h-[36px] sm:max-h-[58px] max-w-[115px] sm:max-w-[182px]",
   },
   {
     id: "delov",
@@ -124,7 +124,7 @@ const ROW_ONE_LOGOS: ClientLogo[] = [
     alt: "Logo Delov — cliente de identidade visual, vitrine e letreiro da Sinal Sign em Brasília DF",
     width: 570,
     height: 129,
-    logoClass: "max-h-[40px] max-w-[178px]",
+    logoClass: "max-h-[25px] sm:max-h-[40px] max-w-[110px] sm:max-w-[178px]",
   },
   {
     id: "alfa-tecnologia",
@@ -135,7 +135,7 @@ const ROW_ONE_LOGOS: ClientLogo[] = [
     alt: "Logo Alfa Tecnologia — cliente de sinalização corporativa e acrílico da Sinal Sign em Brasília DF",
     width: 641,
     height: 320,
-    logoClass: "max-h-[66px] max-w-[172px]",
+    logoClass: "max-h-[42px] sm:max-h-[66px] max-w-[110px] sm:max-w-[172px]",
   },
 ];
 
@@ -149,7 +149,7 @@ const ROW_TWO_LOGOS: ClientLogo[] = [
     alt: "Logo Crefisa — cliente de fachadas comerciais e comunicação visual da Sinal Sign em Brasília DF",
     width: 679,
     height: 262,
-    logoClass: "max-h-[52px] max-w-[166px]",
+    logoClass: "max-h-[32px] sm:max-h-[52px] max-w-[105px] sm:max-w-[166px]",
   },
   {
     id: "plaza-brasilia-hoteis",
@@ -160,7 +160,7 @@ const ROW_TWO_LOGOS: ClientLogo[] = [
     alt: "Logo Plaza Brasília Hotéis — cliente de sinalização hoteleira e identificação predial da Sinal Sign em Brasília DF",
     width: 679,
     height: 281,
-    logoClass: "max-h-[64px] max-w-[178px]",
+    logoClass: "max-h-[40px] sm:max-h-[64px] max-w-[110px] sm:max-w-[178px]",
   },
   {
     id: "uab-universidade-aberta-do-brasil",
@@ -171,7 +171,7 @@ const ROW_TWO_LOGOS: ClientLogo[] = [
     alt: "Logo UAB Universidade Aberta do Brasil — cliente de comunicação visual institucional e sinalização da Sinal Sign em Brasília DF",
     width: 517,
     height: 281,
-    logoClass: "max-h-[64px] max-w-[170px]",
+    logoClass: "max-h-[40px] sm:max-h-[64px] max-w-[105px] sm:max-w-[170px]",
   },
   {
     id: "touti",
@@ -182,7 +182,7 @@ const ROW_TWO_LOGOS: ClientLogo[] = [
     alt: "Logo Touti — cliente de quiosques, displays em acrílico e letreiros da Sinal Sign em Brasília DF",
     width: 480,
     height: 111,
-    logoClass: "max-h-[34px] max-w-[160px]",
+    logoClass: "max-h-[22px] sm:max-h-[34px] max-w-[105px] sm:max-w-[160px]",
   },
   {
     id: "neude-nascimento-studio-de-beleza",
@@ -193,7 +193,7 @@ const ROW_TWO_LOGOS: ClientLogo[] = [
     alt: "Logo Neude Nascimento Studio de Beleza — cliente de logo em acrílico espelhado e fachada da Sinal Sign em Brasília DF",
     width: 903,
     height: 334,
-    logoClass: "max-h-[66px] max-w-[186px]",
+    logoClass: "max-h-[42px] sm:max-h-[66px] max-w-[115px] sm:max-w-[186px]",
   },
   {
     id: "caes-e-gatos-servicos-veterinarios",
@@ -204,7 +204,7 @@ const ROW_TWO_LOGOS: ClientLogo[] = [
     alt: "Logo Cães e Gatos Serviços Veterinários — cliente de fachada em ACM e sinalização clínica da Sinal Sign em Brasília DF",
     width: 609,
     height: 173,
-    logoClass: "max-h-[54px] max-w-[186px]",
+    logoClass: "max-h-[34px] sm:max-h-[54px] max-w-[115px] sm:max-w-[186px]",
   },
   {
     id: "seth-capital",
@@ -215,7 +215,7 @@ const ROW_TWO_LOGOS: ClientLogo[] = [
     alt: "Logo Seth Capital — cliente de letreiro corporativo em acrílico e inox da Sinal Sign em Brasília DF",
     width: 586,
     height: 329,
-    logoClass: "max-h-[66px] max-w-[168px]",
+    logoClass: "max-h-[42px] sm:max-h-[66px] max-w-[105px] sm:max-w-[168px]",
   },
   {
     id: "corbucci-acai",
@@ -226,7 +226,7 @@ const ROW_TWO_LOGOS: ClientLogo[] = [
     alt: "Logo Corbucci Açaí — cliente de fachadas, luminosos e adesivação comercial da Sinal Sign em Brasília DF",
     width: 421,
     height: 161,
-    logoClass: "max-h-[58px] max-w-[170px]",
+    logoClass: "max-h-[36px] sm:max-h-[58px] max-w-[105px] sm:max-w-[170px]",
   },
   {
     id: "luna-lavanderia-express",
@@ -237,7 +237,7 @@ const ROW_TWO_LOGOS: ClientLogo[] = [
     alt: "Logo Luna Lavanderia Express — cliente de comunicação visual, vitrine e letreiros da Sinal Sign em Brasília DF",
     width: 321,
     height: 425,
-    logoClass: "max-h-[72px] max-w-[120px]",
+    logoClass: "max-h-[46px] sm:max-h-[72px] max-w-[75px] sm:max-w-[120px]",
   },
   {
     id: "levi",
@@ -248,7 +248,7 @@ const ROW_TWO_LOGOS: ClientLogo[] = [
     alt: "Logo Lévi — cliente de letreiros, displays e sinalização de loja da Sinal Sign em Brasília DF",
     width: 395,
     height: 272,
-    logoClass: "max-h-[62px] max-w-[140px]",
+    logoClass: "max-h-[38px] sm:max-h-[62px] max-w-[90px] sm:max-w-[140px]",
   },
   {
     id: "revelando-o-mundo-turismo",
@@ -259,7 +259,7 @@ const ROW_TWO_LOGOS: ClientLogo[] = [
     alt: "Logo Revelando o Mundo Turismo — cliente de comunicação visual e plotagem da Sinal Sign em Brasília DF",
     width: 304,
     height: 347,
-    logoClass: "max-h-[72px] max-w-[130px]",
+    logoClass: "max-h-[46px] sm:max-h-[72px] max-w-[80px] sm:max-w-[130px]",
   },
 ];
 
@@ -274,7 +274,7 @@ function LogoCard({
     <div
       role={isClone ? undefined : "listitem"}
       title={isClone ? undefined : `${client.name} — ${client.niche}`}
-      className="relative flex items-center justify-center w-[216px] sm:w-[236px] h-[94px] sm:h-[104px] px-6 py-4 liquid-glass border border-white/12 hover:border-[#85BCD7]/50 transition-all duration-300 shrink-0 group shadow-lg shadow-black/45"
+      className="relative flex items-center justify-center w-[136px] xs:w-[155px] sm:w-[216px] md:w-[236px] h-[64px] xs:h-[72px] sm:h-[94px] md:h-[104px] px-3 py-2 xs:px-4 xs:py-2.5 sm:px-6 sm:py-4 liquid-glass border border-white/12 hover:border-[#85BCD7]/50 transition-all duration-300 shrink-0 group shadow-lg shadow-black/45"
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -285,7 +285,11 @@ function LogoCard({
         height={client.height}
         loading="eager"
         decoding="async"
-        className={`w-auto h-auto object-contain select-none brightness-0 invert ${client.restingOpacity ?? "opacity-90"} group-hover:opacity-100 group-hover:scale-[1.04] group-hover:drop-shadow-[0_0_12px_rgba(133,188,215,0.35)] transition-all duration-300 ${client.logoClass}`}
+        className={`w-auto h-auto object-contain select-none brightness-0 invert ${
+          client.restingOpacity ?? "opacity-90"
+        } group-hover:opacity-100 group-hover:scale-[1.04] group-hover:drop-shadow-[0_0_12px_rgba(133,188,215,0.35)] transition-all duration-300 ${
+          client.logoClass
+        }`}
       />
     </div>
   );
@@ -299,7 +303,7 @@ function LogoMarqueeRow({
   reverse?: boolean;
 }) {
   return (
-    <div className="relative w-full overflow-hidden py-2 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+    <div className="relative w-full overflow-hidden py-1.5 sm:py-2 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
       <div
         className={`flex w-max ${
           reverse
@@ -309,7 +313,7 @@ function LogoMarqueeRow({
       >
         <div
           role="list"
-          className="flex items-center gap-4 sm:gap-5 pr-4 sm:pr-5 shrink-0"
+          className="flex items-center gap-2.5 sm:gap-5 pr-2.5 sm:pr-5 shrink-0"
         >
           {items.map((client) => (
             <LogoCard key={client.id} client={client} />
@@ -318,7 +322,7 @@ function LogoMarqueeRow({
 
         <div
           aria-hidden="true"
-          className="flex items-center gap-4 sm:gap-5 pr-4 sm:pr-5 shrink-0"
+          className="flex items-center gap-2.5 sm:gap-5 pr-2.5 sm:pr-5 shrink-0"
         >
           {items.map((client) => (
             <LogoCard key={`${client.id}-clone`} client={client} isClone />
@@ -331,28 +335,28 @@ function LogoMarqueeRow({
 
 export function ClientsLogoCarousel() {
   return (
-    <section aria-labelledby="clientes-df-heading" className="space-y-8 py-6">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-white/10">
+    <section aria-labelledby="clientes-df-heading" className="space-y-5 sm:space-y-8 py-3 sm:py-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4 pb-3 sm:pb-4 border-b border-white/10">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full liquid-pill text-xs text-[#85BCD7] font-heading font-semibold mb-2 border border-[#85BCD7]/30">
-            <Award className="w-3.5 h-3.5 text-[#F7E540]" />
-            MARCAS &amp; EMPRESAS QUE CONFIAM NA SINAL SIGN
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full liquid-pill text-[11px] sm:text-xs text-[#85BCD7] font-heading font-semibold mb-2 border border-[#85BCD7]/30">
+            <Award className="w-3.5 h-3.5 text-[#F7E540] shrink-0" />
+            <span>MARCAS &amp; EMPRESAS QUE CONFIAM NA SINAL SIGN</span>
           </div>
           <h3
             id="clientes-df-heading"
-            className="text-2xl md:text-4xl font-bold text-white tracking-tight font-heading uppercase"
+            className="text-xl sm:text-2xl md:text-4xl font-bold text-white tracking-tight font-heading uppercase"
           >
             Clientes que Atendemos no Distrito Federal
           </h3>
         </div>
 
-        <span className="text-xs font-mono text-neutral-400">
+        <span className="text-[11px] sm:text-xs font-mono text-neutral-400">
           +1.500 projetos executados com fabricação própria
         </span>
       </div>
 
       {/* Carrossel Infinito em Duas Faixas com Direções Opostas */}
-      <div className="space-y-4">
+      <div className="space-y-2.5 sm:space-y-4">
         <LogoMarqueeRow items={ROW_ONE_LOGOS} />
         <LogoMarqueeRow items={ROW_TWO_LOGOS} reverse />
       </div>

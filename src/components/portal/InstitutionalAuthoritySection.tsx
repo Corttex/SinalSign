@@ -2,16 +2,16 @@ import { ShieldCheck, Users, Clock, Award, CheckCircle } from "lucide-react";
 
 export function InstitutionalAuthoritySection() {
   return (
-    <section className="space-y-12">
+    <section className="space-y-8 sm:space-y-12">
       {/* 1. Bloco de Gestão e Execução de Obras */}
-      <div className="liquid-glass p-8 md:p-12 border-white/10 flex flex-col lg:flex-row items-center justify-between gap-10">
-        <div className="space-y-5 max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full liquid-pill text-xs text-[#85BCD7] font-mono border border-[#85BCD7]/30">
-            <Award className="w-3.5 h-3.5 text-[#F7E540]" />
-            ENGENHARIA VISUAL &amp; INFRAESTRUTURA
+      <div className="liquid-glass p-5 sm:p-8 md:p-12 border-white/10 flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-10">
+        <div className="space-y-4 sm:space-y-5 max-w-2xl">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full liquid-pill text-[11px] sm:text-xs text-[#85BCD7] font-mono border border-[#85BCD7]/30">
+            <Award className="w-3.5 h-3.5 text-[#F7E540] shrink-0" />
+            <span>ENGENHARIA VISUAL &amp; INFRAESTRUTURA</span>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight font-serif italic">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-light text-white tracking-tight font-serif italic">
             Nós Projetamos, Prestamos os Serviços e Gerenciamos a <span className="text-[#85BCD7]">Sua Obra.</span>
           </h2>
 

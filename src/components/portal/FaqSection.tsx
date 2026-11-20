@@ -30,13 +30,13 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="space-y-8 max-w-4xl mx-auto w-full">
+    <section className="space-y-6 sm:space-y-8 max-w-4xl mx-auto w-full">
       <div className="text-center space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full liquid-pill text-xs text-[#85BCD7] font-heading font-semibold">
-          <HelpCircle className="w-3.5 h-3.5 text-[#F7E540]" />
-          GUIA TÉCNICO &amp; PERGUNTAS FREQUENTES
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full liquid-pill text-[11px] sm:text-xs text-[#85BCD7] font-heading font-semibold">
+          <HelpCircle className="w-3.5 h-3.5 text-[#F7E540] shrink-0" />
+          <span>GUIA TÉCNICO &amp; PERGUNTAS FREQUENTES</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight uppercase font-heading leading-tight">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight uppercase font-heading leading-tight">
           Dúvidas sobre Materiais, Medidas &amp; Prazos
         </h2>
       </div>

@@ -19,9 +19,9 @@ export function ComprehensiveFooter() {
   )}`;
 
   return (
-    <footer className="w-full pt-16 pb-12 border-t border-white/10 mt-16 space-y-12">
+    <footer className="w-full pt-10 sm:pt-16 pb-8 sm:pb-12 border-t border-white/10 mt-10 sm:mt-16 space-y-8 sm:space-y-12">
       {/* Grid Principal com 4 Colunas Informativas */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-neutral-300">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 text-neutral-300">
         {/* Coluna 1: Identidade da Marca & Manifesto */}
         <div className="space-y-4">
           <SinalSignLogo variant="white" showSubtitle={true} />

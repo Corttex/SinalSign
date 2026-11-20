@@ -31,16 +31,16 @@ export function OfficialServicesBannerGrid() {
   return (
     <section id="solucoes" className="space-y-10">
       {/* Topo da Seção de Serviços */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-white/10">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 pb-3 sm:pb-4 border-b border-white/10">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full liquid-pill text-xs text-[#85BCD7] font-heading font-semibold mb-2 border border-[#85BCD7]/30">
-            <Sparkles className="w-3.5 h-3.5 text-[#F7E540]" />
-            CATÁLOGO & PORTFÓLIO REAL • 18 CATEGORIAS E 146 OBRAS ENTREGUES NO DF
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full liquid-pill text-[11px] sm:text-xs text-[#85BCD7] font-heading font-semibold mb-2 border border-[#85BCD7]/30">
+            <Sparkles className="w-3.5 h-3.5 text-[#F7E540] shrink-0" />
+            <span>CATÁLOGO &amp; PORTFÓLIO REAL • 18 CATEGORIAS E 146 OBRAS NO DF</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase font-heading">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tight uppercase font-heading">
             Nossas Categorias de Serviços
           </h2>
-          <p className="text-sm text-neutral-300 font-sans mt-2 max-w-2xl font-normal">
+          <p className="text-xs sm:text-sm text-neutral-300 font-sans mt-2 max-w-2xl font-normal leading-relaxed">
             Fabricação própria com usinagem a laser, CNC Router, corte eletrônico e impressão UV direta. Clique em qualquer serviço para visualizar as fotos reais das obras executadas pela Sinal Sign.
           </p>
         </div>
@@ -48,7 +48,7 @@ export function OfficialServicesBannerGrid() {
         <div className="flex items-center gap-3">
           <a
             href="#simulador"
-            className="liquid-pill px-6 py-3 rounded-xl text-xs font-heading font-semibold text-white hover:text-[#85BCD7] flex items-center gap-2 border border-white/15 w-fit shrink-0"
+            className="liquid-pill px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs font-heading font-semibold text-white hover:text-[#85BCD7] flex items-center gap-2 border border-white/15 w-full sm:w-fit justify-center shrink-0"
           >
             Simular Medidas por m²
             <ArrowUpRight className="w-3.5 h-3.5 text-[#85BCD7]" />
@@ -57,7 +57,7 @@ export function OfficialServicesBannerGrid() {
       </div>
 
       {/* Grid de Banners Visuais: 18 Categorias Oficiais com Fotos Reais */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {OFFICIAL_SERVICES_18.map((item) => {
           const waUrl = `https://wa.me/5561984853485?text=${encodeURIComponent(
             `Olá Sinal Sign! Gostaria de solicitar um orçamento para o serviço de: ${item.name}.`
@@ -66,7 +66,7 @@ export function OfficialServicesBannerGrid() {
           return (
             <div
               key={item.id}
-              className="group relative min-h-[360px] rounded-3xl overflow-hidden border border-white/10 bg-[#06070A] flex flex-col justify-between p-7 transition-all duration-500 hover:border-[#85BCD7]/70 shadow-xl shadow-black/70"
+              className="group relative min-h-[310px] sm:min-h-[360px] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 bg-[#06070A] flex flex-col justify-between p-5 sm:p-7 transition-all duration-500 hover:border-[#85BCD7]/70 shadow-xl shadow-black/70"
             >
               {/* Imagem Fotográfica Real de Fundo com Alta Nitidez e Zoom Suave */}
               {/* eslint-disable-next-line @next/next/no-img-element */}

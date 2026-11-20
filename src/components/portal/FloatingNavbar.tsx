@@ -27,15 +27,15 @@ export function FloatingNavbar({ whatsappUrl }: FloatingNavbarProps) {
   }, []);
 
   return (
-    <header className="fixed top-3 md:top-4 left-0 right-0 z-50 px-3 md:px-8 pointer-events-none transition-all duration-500">
+    <header className="fixed top-2.5 sm:top-3 md:top-4 left-0 right-0 z-50 px-2.5 sm:px-4 md:px-8 pointer-events-none transition-all duration-500">
       <div
-        className={`max-w-7xl mx-auto w-full rounded-2xl md:rounded-full px-5 md:px-7 py-2.5 md:py-3 flex items-center justify-between border pointer-events-auto transition-all duration-500 ${
+        className={`max-w-7xl mx-auto w-full rounded-2xl md:rounded-full px-3.5 sm:px-5 md:px-7 py-2 sm:py-2.5 md:py-3 flex items-center justify-between border pointer-events-auto transition-all duration-500 ${
           isScrolled
             ? "bg-[#06070a]/92 backdrop-blur-2xl border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.9)]"
             : "liquid-glass border-white/15 shadow-2xl shadow-black/70"
         }`}
       >
-        <a href="/" className="hover:opacity-95 transition-opacity">
+        <a href="/" className="hover:opacity-95 transition-opacity shrink-0">
           <SinalSignLogo variant="white" showSubtitle={true} />
         </a>
 
@@ -77,10 +77,11 @@ export function FloatingNavbar({ whatsappUrl }: FloatingNavbarProps) {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="liquid-pill px-4 py-2 rounded-full text-xs font-heading font-semibold text-neutral-200 hover:text-white flex items-center gap-2.5 border border-white/20 backdrop-blur-lg"
+          className="liquid-pill px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-heading font-semibold text-neutral-200 hover:text-white flex items-center gap-1.5 sm:gap-2.5 border border-white/20 backdrop-blur-lg whitespace-nowrap shrink-0"
         >
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          Fábrica no DF • (61) 98485-3485
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+          <span className="hidden sm:inline">Fábrica no DF • </span>
+          <span>(61) 98485-3485</span>
         </a>
       </div>
     </header>

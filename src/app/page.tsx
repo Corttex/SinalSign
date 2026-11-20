@@ -35,31 +35,31 @@ export default function HomePage() {
       <FloatingNavbar whatsappUrl={whatsappUrl} />
 
       {/* 1 & 2. HERO FULL-WIDTH COM SLIDER DINÂMICO DE OBRAS REAIS DOS CLIENTES */}
-      <section className="relative w-full overflow-hidden border-b border-white/10 bg-[#06070A] pt-24 md:pt-28">
+      <section className="relative w-full overflow-hidden border-b border-white/10 bg-[#06070A] pt-20 sm:pt-24 md:pt-28">
         {/* Slider de Fundo com Transição Automática Suave e Identificação dos Clientes */}
         <HeroBackgroundSlider />
 
         {/* Conteúdo Centralizado da Hero (Headline + CTAs) */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-6 flex flex-col gap-12 md:gap-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-4 sm:py-6 flex flex-col gap-8 sm:gap-12 md:gap-16">
           {/* Bloco Hero Principal */}
-          <div className="pt-4 pb-14 md:pb-20 flex flex-col gap-8 max-w-5xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full liquid-pill text-xs text-[#85BCD7] w-fit font-mono border border-[#85BCD7]/30 backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5 text-[#F7E540]" />
-              FABRICAÇÃO PRÓPRIA DE COMUNICAÇÃO VISUAL &amp; SINALIZAÇÃO NO DF
+          <div className="pt-2 sm:pt-4 pb-10 sm:pb-14 md:pb-20 flex flex-col gap-6 sm:gap-8 max-w-5xl">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full liquid-pill text-[11px] sm:text-xs text-[#85BCD7] w-fit font-mono border border-[#85BCD7]/30 backdrop-blur-md">
+              <Sparkles className="w-3.5 h-3.5 text-[#F7E540] shrink-0" />
+              <span>FABRICAÇÃO PRÓPRIA DE COMUNICAÇÃO VISUAL &amp; SINALIZAÇÃO NO DF</span>
             </div>
 
             {/* Headline Dinâmica em Montserrat Ultra-Bold */}
             <TypewriterHeadline />
 
-            <p className="text-base sm:text-lg md:text-xl text-neutral-200 leading-relaxed font-sans font-normal drop-shadow-md">
+            <p className="text-sm sm:text-lg md:text-xl text-neutral-200 leading-relaxed font-sans font-normal drop-shadow-md">
               Projetamos e fabricamos Fachadas em ACM, Letras Caixa em alto relevo, Acrílicos de 2mm a 20mm, Chapas em PS, Adesivagem de Frotas e Vitrines, Totens monumentais e Sinalização Viária. Da usinagem CNC e corte laser à instalação técnica em todo o Distrito Federal.
             </p>
 
             {/* CTAs em Vidro Líquido com o Azul Royal e Detalhes da Marca */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
               <a
                 href="#simulador"
-                className="liquid-pill px-8 py-4 rounded-full text-sm font-semibold text-white hover:text-[#85BCD7] flex items-center gap-3 border border-white/25 shadow-2xl shadow-black/60 backdrop-blur-lg"
+                className="liquid-pill px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold text-white hover:text-[#85BCD7] flex items-center justify-center gap-2.5 sm:gap-3 border border-white/25 shadow-2xl shadow-black/60 backdrop-blur-lg w-full sm:w-auto"
               >
                 Simular Projeto Ideal
                 <ArrowUpRight className="w-4 h-4 text-[#85BCD7]" />
@@ -69,7 +69,7 @@ export default function HomePage() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#303590] via-[#1C205C] to-[#303590] text-white text-sm font-bold hover:opacity-95 transition-all flex items-center gap-3 border border-[#85BCD7]/40 shadow-xl shadow-[#303590]/50"
+                className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#303590] via-[#1C205C] to-[#303590] text-white text-sm font-bold hover:opacity-95 transition-all flex items-center justify-center gap-2.5 sm:gap-3 border border-[#85BCD7]/40 shadow-xl shadow-[#303590]/50 w-full sm:w-auto"
               >
                 <PhoneCall className="w-4 h-4 text-[#85BCD7]" />
                 Falar com Especialista Técnico
@@ -80,10 +80,10 @@ export default function HomePage() {
       </section>
 
       {/* RESTANTE DO CONTEÚDO DENTRO DO GRID CENTRALIZADO */}
-      <div className="w-full px-4 md:px-8 py-16 max-w-7xl mx-auto flex flex-col gap-28">
+      <div className="w-full px-3.5 sm:px-6 md:px-8 py-10 sm:py-16 max-w-7xl mx-auto flex flex-col gap-14 sm:gap-20 md:gap-28">
 
       {/* 3. Indicadores de Engenharia */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <section className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
         {[
           {
             title: "Corte Laser & CNC Router",
@@ -110,16 +110,16 @@ export default function HomePage() {
             color: "text-[#85BCD7]",
           },
         ].map((item, idx) => (
-          <div key={idx} className="liquid-glass p-6 flex flex-col justify-start gap-5">
-            <div className="h-7 flex items-center">
-              <item.icon className={`w-6 h-6 ${item.color}`} />
+          <div key={idx} className="liquid-glass p-3.5 sm:p-6 flex flex-col justify-start gap-2.5 sm:gap-5">
+            <div className="h-6 sm:h-7 flex items-center">
+              <item.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${item.color}`} />
             </div>
-            <div className="min-h-[48px] flex items-center">
-              <h4 className="text-base font-semibold text-white tracking-tight leading-snug font-heading">
+            <div className="min-h-[36px] sm:min-h-[48px] flex items-center">
+              <h4 className="text-xs sm:text-base font-semibold text-white tracking-tight leading-snug font-heading">
                 {item.title}
               </h4>
             </div>
-            <p className="text-xs text-neutral-400 leading-relaxed font-sans pt-1 border-t border-white/5">
+            <p className="text-[10px] sm:text-xs text-neutral-400 leading-relaxed font-sans pt-1 border-t border-white/5 line-clamp-3 sm:line-clamp-none">
               {item.desc}
             </p>
           </div>
@@ -155,12 +155,12 @@ export default function HomePage() {
       <FinalCtaConversationSection />
 
       {/* 11. Cobertura Regional de Brasília e Entorno */}
-      <section className="liquid-glass p-8 space-y-6">
-        <div className="flex items-center justify-between pb-4 border-b border-white/10">
+      <section className="liquid-glass p-5 sm:p-8 space-y-4 sm:space-y-6">
+        <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-white/10">
           <div>
-            <h3 className="text-xl font-semibold text-white tracking-tight flex items-center gap-2 font-heading">
-              <MapPin className="w-5 h-5 text-[#85BCD7]" />
-              Atendimento &amp; Instalação Técnica em Todo o Distrito Federal e Entorno
+            <h3 className="text-lg sm:text-xl font-semibold text-white tracking-tight flex items-center gap-2 font-heading">
+              <MapPin className="w-5 h-5 text-[#85BCD7] shrink-0" />
+              <span>Atendimento &amp; Instalação Técnica em Todo o Distrito Federal e Entorno</span>
             </h3>
             <p className="text-xs text-neutral-400 font-sans mt-0.5">
               Fabricação com medição in-loco e instalação profissional nas seguintes regiões:
@@ -168,7 +168,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {[
             "Plano Piloto (Asa Sul & Asa Norte)",
             "Águas Claras",
